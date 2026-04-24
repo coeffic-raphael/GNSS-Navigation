@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Note: data/ and output/ are intentionally committed so anyone cloning the
+# repo can inspect the sample inputs and reproduce the reference trajectories
+# without first running the full pipeline. See the README for how to refresh
+# them (`src/download_brdc.py` and `src/main.py --session all`).
+
+# Local-only documents
+ARCHITECTURE.md
+*.pdf
