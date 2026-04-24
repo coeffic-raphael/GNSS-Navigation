@@ -91,8 +91,10 @@ Outputs are written to `output/`:
 | `session_XX.kml`            | Trajectory for Google Earth: red LineString + ~30 timestamped placemarks |
 
 Rows with no valid fix are kept in the CSV with empty lat/lon/alt/velocity
-fields and `n_sat = 0`, so the 1 Hz cadence is preserved. The KML ignores
-these rows.
+fields and `n_sat = 0`, so the 1 Hz cadence is preserved. To guarantee a
+strict 1 Hz export even when Android epochs drift slightly in their
+sub-second offset, every output row is snapped to the 1-second grid defined
+by the first fix. The KML ignores rows with missing coordinates.
 
 ### 3. (Optional) Validate against the phone's NMEA solution
 
@@ -140,8 +142,10 @@ Kepler equations (with Sagnac and relativistic clock corrections);
 over-determined (Gauss-Newton normal equations) for N > 4; (e) apply
 Klobuchar + Saastamoinen corrections from the rough fix and re-solve
 (two-pass scheme); (f) drop outlier satellites whose post-fit residual
-exceeds 500 m and re-solve (up to 3 rejections). Receiver velocity is
-estimated by finite differencing the ECEF positions of consecutive epochs.
+exceeds 500 m and re-solve (up to 3 rejections); (g) snap solved epochs to
+the nearest slot on the 1 Hz grid defined by the first fix and fill missing
+seconds with NaN rows. Receiver velocity is estimated by finite differencing
+the ECEF positions of consecutive epochs.
 
 ## Credits
 

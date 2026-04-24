@@ -152,8 +152,10 @@ def _fill_gaps_with_nan(records: list[dict]) -> list[dict]:
     Missing seconds (epochs skipped by the solver) get a row with NaN
     position/velocity and ``n_sat=0`` — honest placeholder, not interpolation.
 
-    All RINEX epochs share the same sub-second offset (e.g. .418 s), so
-    we preserve it when generating placeholder timestamps.
+    Some Android RINEX captures drift slightly in their sub-second offsets
+    (e.g. .416, .431, .491). To keep the exported trajectory strictly 1 Hz,
+    we snap every output row onto the 1-second grid defined by the first fix
+    and map each solved epoch to its nearest integer-second slot.
     """
     if not records:
         return records
@@ -167,7 +169,8 @@ def _fill_gaps_with_nan(records: list[dict]) -> list[dict]:
     end_dt   = _parse(sorted_recs[-1]["utc_time"])
 
     # Index real fixes by their integer-second offset from the first epoch.
-    # We round to the nearest whole second (epochs are on a shared sub-s grid).
+    # If several raw epochs fall in the same slot, keep the latest one; the
+    # final output timestamps are regenerated on the strict 1 Hz grid below.
     by_sec: dict[int, dict] = {}
     for r in sorted_recs:
         offset = (_parse(r["utc_time"]) - start_dt).total_seconds()
@@ -176,10 +179,12 @@ def _fill_gaps_with_nan(records: list[dict]) -> list[dict]:
     total_seconds = int(round((end_dt - start_dt).total_seconds()))
     filled: list[dict] = []
     for s in range(total_seconds + 1):
+        t = start_dt + datetime.timedelta(seconds=s)
         if s in by_sec:
-            filled.append(by_sec[s])
+            row = dict(by_sec[s])
+            row["utc_time"] = t.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
+            filled.append(row)
         else:
-            t = start_dt + datetime.timedelta(seconds=s)
             filled.append({
                 "utc_time": t.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z",
                 "lat_deg":  float("nan"),
