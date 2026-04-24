@@ -105,9 +105,6 @@ python src/validate.py \
 Prints horizontal / vertical / 3D error statistics (median, RMS, max) and
 the median time delta between the two streams.
 
-Note: the NMEA is the phone's own real-time solution (A-GPS + augmentation),
-not a ground truth — a 5–8 m RMS gap against it is consistent with a clean
-solution from raw pseudoranges.
 
 ## Project layout
 
