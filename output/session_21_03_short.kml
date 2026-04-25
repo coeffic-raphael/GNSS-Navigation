@@ -19,13 +19,13 @@
         <Folder id="6">
             <name>Points (1 every 3s)</name>
             <Placemark id="8">
-                <name>15:14:41 • 0.0 m/s</name>
+                <name>15:14:41 • 1.3 m/s</name>
                 <description>UTC: 2026-03-21T15:14:41.418Z
 Position: 32.168451°, 34.813235°, 33.6 m
-Speed: 0.00 m/s (0.0 km/h)
-  vx = +0.00 m/s
-  vy = +0.00 m/s
-  vz = +0.00 m/s
+Speed: 1.26 m/s (4.5 km/h)
+  vx = -0.70 m/s
+  vy = -0.90 m/s
+  vz = -0.53 m/s
 Satellites: 5</description>
                 <TimeStamp id="9">
                     <when>2026-03-21T15:14:41.418Z</when>
@@ -36,13 +36,13 @@ Satellites: 5</description>
                 </Point>
             </Placemark>
             <Placemark id="11">
-                <name>15:14:44 • 14.5 m/s</name>
+                <name>15:14:44 • 4.1 m/s</name>
                 <description>UTC: 2026-03-21T15:14:44.418Z
 Position: 32.168478°, 34.813203°, 36.8 m
-Speed: 14.46 m/s (52.1 km/h)
-  vx = +4.77 m/s
-  vy = -3.72 m/s
-  vz = -13.14 m/s
+Speed: 4.13 m/s (14.9 km/h)
+  vx = +1.10 m/s
+  vy = +1.79 m/s
+  vz = +3.55 m/s
 Satellites: 5</description>
                 <TimeStamp id="12">
                     <when>2026-03-21T15:14:44.418Z</when>
@@ -53,13 +53,13 @@ Satellites: 5</description>
                 </Point>
             </Placemark>
             <Placemark id="14">
-                <name>15:14:56 • 12.1 m/s</name>
+                <name>15:14:56 • 1.5 m/s</name>
                 <description>UTC: 2026-03-21T15:14:56.418Z
 Position: 32.168642°, 34.813270°, 46.9 m
-Speed: 12.08 m/s (43.5 km/h)
-  vx = +3.10 m/s
-  vy = +1.34 m/s
-  vz = -11.60 m/s
+Speed: 1.51 m/s (5.5 km/h)
+  vx = -1.32 m/s
+  vy = -0.60 m/s
+  vz = +0.41 m/s
 Satellites: 5</description>
                 <TimeStamp id="15">
                     <when>2026-03-21T15:14:56.418Z</when>
@@ -70,13 +70,13 @@ Satellites: 5</description>
                 </Point>
             </Placemark>
             <Placemark id="17">
-                <name>15:14:59 • 59.7 m/s</name>
+                <name>15:14:59 • 1.4 m/s</name>
                 <description>UTC: 2026-03-21T15:14:59.418Z
 Position: 32.168746°, 34.813356°, 62.8 m
-Speed: 59.73 m/s (215.0 km/h)
-  vx = +24.17 m/s
-  vy = +32.35 m/s
-  vz = +44.01 m/s
+Speed: 1.39 m/s (5.0 km/h)
+  vx = -0.82 m/s
+  vy = -1.04 m/s
+  vz = -0.41 m/s
 Satellites: 6</description>
                 <TimeStamp id="18">
                     <when>2026-03-21T15:14:59.418Z</when>
@@ -87,13 +87,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="20">
-                <name>15:15:02 • 20.0 m/s</name>
+                <name>15:15:02 • 0.9 m/s</name>
                 <description>UTC: 2026-03-21T15:15:02.418Z
 Position: 32.168830°, 34.813203°, 57.9 m
-Speed: 19.98 m/s (71.9 km/h)
-  vx = +6.46 m/s
-  vy = -10.58 m/s
-  vz = +15.67 m/s
+Speed: 0.91 m/s (3.3 km/h)
+  vx = +0.29 m/s
+  vy = +0.07 m/s
+  vz = +0.86 m/s
 Satellites: 6</description>
                 <TimeStamp id="21">
                     <when>2026-03-21T15:15:02.418Z</when>
@@ -104,13 +104,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="23">
-                <name>15:15:05 • 13.8 m/s</name>
+                <name>15:15:05 • 1.0 m/s</name>
                 <description>UTC: 2026-03-21T15:15:05.418Z
 Position: 32.168839°, 34.813274°, 50.6 m
-Speed: 13.84 m/s (49.8 km/h)
-  vx = +12.57 m/s
-  vy = -1.76 m/s
-  vz = +5.50 m/s
+Speed: 1.00 m/s (3.6 km/h)
+  vx = -0.29 m/s
+  vy = -0.95 m/s
+  vz = -0.12 m/s
 Satellites: 6</description>
                 <TimeStamp id="24">
                     <when>2026-03-21T15:15:05.418Z</when>
@@ -121,13 +121,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="26">
-                <name>15:15:08 • 6.0 m/s</name>
+                <name>15:15:08 • 1.0 m/s</name>
                 <description>UTC: 2026-03-21T15:15:08.418Z
 Position: 32.168756°, 34.813244°, 44.4 m
-Speed: 5.96 m/s (21.5 km/h)
-  vx = -4.44 m/s
-  vy = -3.15 m/s
-  vz = -2.42 m/s
+Speed: 1.01 m/s (3.6 km/h)
+  vx = -0.40 m/s
+  vy = -0.90 m/s
+  vz = +0.19 m/s
 Satellites: 6</description>
                 <TimeStamp id="27">
                     <when>2026-03-21T15:15:08.418Z</when>
@@ -138,13 +138,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="29">
-                <name>15:15:11 • 38.1 m/s</name>
+                <name>15:15:11 • 1.4 m/s</name>
                 <description>UTC: 2026-03-21T15:15:11.418Z
 Position: 32.168716°, 34.813251°, 27.7 m
-Speed: 38.12 m/s (137.2 km/h)
-  vx = -27.41 m/s
-  vy = -11.61 m/s
-  vz = -23.80 m/s
+Speed: 1.44 m/s (5.2 km/h)
+  vx = +1.18 m/s
+  vy = -0.64 m/s
+  vz = +0.53 m/s
 Satellites: 5</description>
                 <TimeStamp id="30">
                     <when>2026-03-21T15:15:11.418Z</when>
@@ -155,13 +155,13 @@ Satellites: 5</description>
                 </Point>
             </Placemark>
             <Placemark id="32">
-                <name>15:15:14 • 15.6 m/s</name>
+                <name>15:15:14 • 1.3 m/s</name>
                 <description>UTC: 2026-03-21T15:15:14.418Z
 Position: 32.168732°, 34.813230°, 16.6 m
-Speed: 15.63 m/s (56.3 km/h)
-  vx = -11.75 m/s
-  vy = -2.17 m/s
-  vz = -10.08 m/s
+Speed: 1.26 m/s (4.5 km/h)
+  vx = +0.47 m/s
+  vy = -1.17 m/s
+  vz = -0.01 m/s
 Satellites: 6</description>
                 <TimeStamp id="33">
                     <when>2026-03-21T15:15:14.418Z</when>
@@ -172,13 +172,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="35">
-                <name>15:15:17 • 16.0 m/s</name>
+                <name>15:15:17 • 1.1 m/s</name>
                 <description>UTC: 2026-03-21T15:15:17.418Z
 Position: 32.168794°, 34.813155°, 50.3 m
-Speed: 16.00 m/s (57.6 km/h)
-  vx = -6.44 m/s
-  vy = +9.21 m/s
-  vz = +11.39 m/s
+Speed: 1.14 m/s (4.1 km/h)
+  vx = +0.59 m/s
+  vy = -0.88 m/s
+  vz = -0.43 m/s
 Satellites: 6</description>
                 <TimeStamp id="36">
                     <when>2026-03-21T15:15:17.418Z</when>
@@ -189,13 +189,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="38">
-                <name>15:15:20 • 46.4 m/s</name>
+                <name>15:15:20 • 0.9 m/s</name>
                 <description>UTC: 2026-03-21T15:15:20.418Z
 Position: 32.168627°, 34.812920°, 28.8 m
-Speed: 46.40 m/s (167.0 km/h)
-  vx = -5.96 m/s
-  vy = -26.94 m/s
-  vz = -37.30 m/s
+Speed: 0.95 m/s (3.4 km/h)
+  vx = +0.58 m/s
+  vy = -0.73 m/s
+  vz = -0.15 m/s
 Satellites: 5</description>
                 <TimeStamp id="39">
                     <when>2026-03-21T15:15:20.418Z</when>
@@ -206,13 +206,13 @@ Satellites: 5</description>
                 </Point>
             </Placemark>
             <Placemark id="41">
-                <name>15:15:23 • 28.0 m/s</name>
+                <name>15:15:23 • 1.3 m/s</name>
                 <description>UTC: 2026-03-21T15:15:23.418Z
 Position: 32.168815°, 34.813112°, 67.1 m
-Speed: 27.97 m/s (100.7 km/h)
-  vx = +11.41 m/s
-  vy = +15.42 m/s
-  vz = +20.36 m/s
+Speed: 1.31 m/s (4.7 km/h)
+  vx = +0.83 m/s
+  vy = -0.96 m/s
+  vz = +0.34 m/s
 Satellites: 5</description>
                 <TimeStamp id="42">
                     <when>2026-03-21T15:15:23.418Z</when>
@@ -223,13 +223,13 @@ Satellites: 5</description>
                 </Point>
             </Placemark>
             <Placemark id="44">
-                <name>15:15:26 • 11.2 m/s</name>
+                <name>15:15:26 • 1.3 m/s</name>
                 <description>UTC: 2026-03-21T15:15:26.418Z
 Position: 32.168786°, 34.812948°, 68.3 m
-Speed: 11.17 m/s (40.2 km/h)
-  vx = +11.04 m/s
-  vy = +1.54 m/s
-  vz = -0.68 m/s
+Speed: 1.30 m/s (4.7 km/h)
+  vx = +0.59 m/s
+  vy = -1.16 m/s
+  vz = -0.04 m/s
 Satellites: 6</description>
                 <TimeStamp id="45">
                     <when>2026-03-21T15:15:26.418Z</when>
@@ -240,13 +240,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="47">
-                <name>15:15:29 • 13.3 m/s</name>
+                <name>15:15:29 • 2.0 m/s</name>
                 <description>UTC: 2026-03-21T15:15:29.418Z
 Position: 32.168806°, 34.812883°, 65.0 m
-Speed: 13.29 m/s (47.9 km/h)
-  vx = -11.82 m/s
-  vy = +0.44 m/s
-  vz = +6.06 m/s
+Speed: 2.02 m/s (7.3 km/h)
+  vx = +1.35 m/s
+  vy = -1.50 m/s
+  vz = +0.08 m/s
 Satellites: 6</description>
                 <TimeStamp id="48">
                     <when>2026-03-21T15:15:29.418Z</when>
@@ -257,13 +257,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="50">
-                <name>15:15:32 • 20.0 m/s</name>
+                <name>15:15:32 • 1.9 m/s</name>
                 <description>UTC: 2026-03-21T15:15:32.418Z
 Position: 32.168811°, 34.812960°, 33.6 m
-Speed: 20.01 m/s (72.0 km/h)
-  vx = -17.62 m/s
-  vy = -3.30 m/s
-  vz = -8.89 m/s
+Speed: 1.90 m/s (6.9 km/h)
+  vx = +0.97 m/s
+  vy = -1.62 m/s
+  vz = +0.22 m/s
 Satellites: 6</description>
                 <TimeStamp id="51">
                     <when>2026-03-21T15:15:32.418Z</when>
@@ -274,13 +274,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="53">
-                <name>15:15:35 • 8.0 m/s</name>
+                <name>15:15:35 • 1.6 m/s</name>
                 <description>UTC: 2026-03-21T15:15:35.418Z
 Position: 32.168767°, 34.812713°, 50.9 m
-Speed: 7.98 m/s (28.7 km/h)
-  vx = +5.95 m/s
-  vy = +1.77 m/s
-  vz = -5.02 m/s
+Speed: 1.57 m/s (5.6 km/h)
+  vx = -0.63 m/s
+  vy = -1.36 m/s
+  vz = -0.47 m/s
 Satellites: 7</description>
                 <TimeStamp id="54">
                     <when>2026-03-21T15:15:35.418Z</when>
@@ -291,13 +291,13 @@ Satellites: 7</description>
                 </Point>
             </Placemark>
             <Placemark id="56">
-                <name>15:15:38 • 13.4 m/s</name>
+                <name>15:15:38 • 0.3 m/s</name>
                 <description>UTC: 2026-03-21T15:15:38.418Z
 Position: 32.168750°, 34.812780°, 55.4 m
-Speed: 13.45 m/s (48.4 km/h)
-  vx = +0.62 m/s
-  vy = +11.89 m/s
-  vz = -6.24 m/s
+Speed: 0.26 m/s (0.9 km/h)
+  vx = +0.12 m/s
+  vy = -0.03 m/s
+  vz = -0.23 m/s
 Satellites: 8</description>
                 <TimeStamp id="57">
                     <when>2026-03-21T15:15:38.418Z</when>
@@ -308,13 +308,13 @@ Satellites: 8</description>
                 </Point>
             </Placemark>
             <Placemark id="59">
-                <name>15:15:41 • 18.9 m/s</name>
+                <name>15:15:41 • 1.7 m/s</name>
                 <description>UTC: 2026-03-21T15:15:41.418Z
 Position: 32.168769°, 34.812871°, 53.1 m
-Speed: 18.85 m/s (67.9 km/h)
-  vx = +12.68 m/s
-  vy = +12.71 m/s
-  vz = -5.75 m/s
+Speed: 1.71 m/s (6.2 km/h)
+  vx = -0.79 m/s
+  vy = +1.26 m/s
+  vz = -0.84 m/s
 Satellites: 7</description>
                 <TimeStamp id="60">
                     <when>2026-03-21T15:15:41.418Z</when>
@@ -325,13 +325,13 @@ Satellites: 7</description>
                 </Point>
             </Placemark>
             <Placemark id="62">
-                <name>15:15:44 • 16.4 m/s</name>
+                <name>15:15:44 • 1.7 m/s</name>
                 <description>UTC: 2026-03-21T15:15:44.418Z
 Position: 32.168715°, 34.812861°, 40.4 m
-Speed: 16.36 m/s (58.9 km/h)
-  vx = +4.46 m/s
-  vy = -4.57 m/s
-  vz = -15.06 m/s
+Speed: 1.69 m/s (6.1 km/h)
+  vx = -0.25 m/s
+  vy = +1.55 m/s
+  vz = -0.61 m/s
 Satellites: 7</description>
                 <TimeStamp id="63">
                     <when>2026-03-21T15:15:44.418Z</when>
@@ -342,13 +342,13 @@ Satellites: 7</description>
                 </Point>
             </Placemark>
             <Placemark id="65">
-                <name>15:15:47 • 9.4 m/s</name>
+                <name>15:15:47 • 1.7 m/s</name>
                 <description>UTC: 2026-03-21T15:15:47.418Z
 Position: 32.168868°, 34.813005°, 40.9 m
-Speed: 9.39 m/s (33.8 km/h)
-  vx = -0.82 m/s
-  vy = -4.18 m/s
-  vz = -8.36 m/s
+Speed: 1.73 m/s (6.2 km/h)
+  vx = -1.14 m/s
+  vy = +1.27 m/s
+  vz = -0.27 m/s
 Satellites: 8</description>
                 <TimeStamp id="66">
                     <when>2026-03-21T15:15:47.418Z</when>
@@ -359,13 +359,13 @@ Satellites: 8</description>
                 </Point>
             </Placemark>
             <Placemark id="68">
-                <name>15:15:50 • 15.5 m/s</name>
+                <name>15:15:50 • 1.5 m/s</name>
                 <description>UTC: 2026-03-21T15:15:50.418Z
 Position: 32.168832°, 34.813092°, 57.2 m
-Speed: 15.47 m/s (55.7 km/h)
-  vx = -2.26 m/s
-  vy = +15.22 m/s
-  vz = +1.66 m/s
+Speed: 1.48 m/s (5.3 km/h)
+  vx = -0.69 m/s
+  vy = +1.25 m/s
+  vz = -0.37 m/s
 Satellites: 7</description>
                 <TimeStamp id="69">
                     <when>2026-03-21T15:15:50.418Z</when>
@@ -376,13 +376,13 @@ Satellites: 7</description>
                 </Point>
             </Placemark>
             <Placemark id="71">
-                <name>15:15:53 • 15.3 m/s</name>
+                <name>15:15:53 • 1.4 m/s</name>
                 <description>UTC: 2026-03-21T15:15:53.418Z
 Position: 32.168761°, 34.813027°, 52.1 m
-Speed: 15.31 m/s (55.1 km/h)
-  vx = +1.89 m/s
-  vy = -5.81 m/s
-  vz = -14.04 m/s
+Speed: 1.39 m/s (5.0 km/h)
+  vx = -1.01 m/s
+  vy = +0.82 m/s
+  vz = -0.50 m/s
 Satellites: 6</description>
                 <TimeStamp id="72">
                     <when>2026-03-21T15:15:53.418Z</when>
@@ -393,13 +393,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="74">
-                <name>15:15:56 • 22.3 m/s</name>
+                <name>15:15:56 • 1.5 m/s</name>
                 <description>UTC: 2026-03-21T15:15:56.418Z
 Position: 32.168781°, 34.813184°, 62.4 m
-Speed: 22.29 m/s (80.3 km/h)
-  vx = +17.18 m/s
-  vy = +14.10 m/s
-  vz = -1.75 m/s
+Speed: 1.53 m/s (5.5 km/h)
+  vx = -1.14 m/s
+  vy = -0.29 m/s
+  vz = -0.98 m/s
 Satellites: 7</description>
                 <TimeStamp id="75">
                     <when>2026-03-21T15:15:56.418Z</when>
@@ -410,13 +410,13 @@ Satellites: 7</description>
                 </Point>
             </Placemark>
             <Placemark id="77">
-                <name>15:15:59 • 35.7 m/s</name>
+                <name>15:15:59 • 1.5 m/s</name>
                 <description>UTC: 2026-03-21T15:15:59.418Z
 Position: 32.168964°, 34.813171°, 74.6 m
-Speed: 35.75 m/s (128.7 km/h)
-  vx = +12.18 m/s
-  vy = +9.85 m/s
-  vz = +32.13 m/s
+Speed: 1.54 m/s (5.5 km/h)
+  vx = -1.10 m/s
+  vy = +0.31 m/s
+  vz = -1.03 m/s
 Satellites: 7</description>
                 <TimeStamp id="78">
                     <when>2026-03-21T15:15:59.418Z</when>
@@ -427,13 +427,13 @@ Satellites: 7</description>
                 </Point>
             </Placemark>
             <Placemark id="80">
-                <name>15:16:02 • 12.0 m/s</name>
+                <name>15:16:02 • 1.6 m/s</name>
                 <description>UTC: 2026-03-21T15:16:02.418Z
 Position: 32.168810°, 34.813233°, 36.1 m
-Speed: 11.97 m/s (43.1 km/h)
-  vx = -10.14 m/s
-  vy = -5.91 m/s
-  vz = +2.37 m/s
+Speed: 1.62 m/s (5.8 km/h)
+  vx = -0.58 m/s
+  vy = +1.46 m/s
+  vz = +0.38 m/s
 Satellites: 7</description>
                 <TimeStamp id="81">
                     <when>2026-03-21T15:16:02.418Z</when>
@@ -444,13 +444,13 @@ Satellites: 7</description>
                 </Point>
             </Placemark>
             <Placemark id="83">
-                <name>15:16:05 • 32.5 m/s</name>
+                <name>15:16:05 • 1.0 m/s</name>
                 <description>UTC: 2026-03-21T15:16:05.418Z
 Position: 32.168759°, 34.813350°, 37.2 m
-Speed: 32.46 m/s (116.9 km/h)
-  vx = -11.57 m/s
-  vy = -7.77 m/s
-  vz = -29.32 m/s
+Speed: 0.96 m/s (3.5 km/h)
+  vx = -0.87 m/s
+  vy = +0.36 m/s
+  vz = +0.21 m/s
 Satellites: 7</description>
                 <TimeStamp id="84">
                     <when>2026-03-21T15:16:05.418Z</when>
@@ -461,13 +461,13 @@ Satellites: 7</description>
                 </Point>
             </Placemark>
             <Placemark id="86">
-                <name>15:16:08 • 15.4 m/s</name>
+                <name>15:16:08 • 1.2 m/s</name>
                 <description>UTC: 2026-03-21T15:16:08.418Z
 Position: 32.168825°, 34.813304°, 46.5 m
-Speed: 15.40 m/s (55.5 km/h)
-  vx = -14.97 m/s
-  vy = -0.43 m/s
-  vz = -3.61 m/s
+Speed: 1.23 m/s (4.4 km/h)
+  vx = -0.97 m/s
+  vy = -0.45 m/s
+  vz = -0.61 m/s
 Satellites: 7</description>
                 <TimeStamp id="87">
                     <when>2026-03-21T15:16:08.418Z</when>
@@ -478,13 +478,13 @@ Satellites: 7</description>
                 </Point>
             </Placemark>
             <Placemark id="89">
-                <name>15:16:11 • 26.3 m/s</name>
+                <name>15:16:11 • 1.3 m/s</name>
                 <description>UTC: 2026-03-21T15:16:11.418Z
 Position: 32.168911°, 34.813282°, 28.2 m
-Speed: 26.28 m/s (94.6 km/h)
-  vx = -22.43 m/s
-  vy = -11.73 m/s
-  vz = -7.05 m/s
+Speed: 1.29 m/s (4.6 km/h)
+  vx = +0.86 m/s
+  vy = -0.67 m/s
+  vz = +0.68 m/s
 Satellites: 6</description>
                 <TimeStamp id="90">
                     <when>2026-03-21T15:16:11.418Z</when>
@@ -495,13 +495,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="92">
-                <name>15:16:14 • 9.7 m/s</name>
+                <name>15:16:14 • 0.9 m/s</name>
                 <description>UTC: 2026-03-21T15:16:14.418Z
 Position: 32.168817°, 34.813226°, 50.3 m
-Speed: 9.68 m/s (34.9 km/h)
-  vx = -5.23 m/s
-  vy = -8.09 m/s
-  vz = -1.05 m/s
+Speed: 0.88 m/s (3.2 km/h)
+  vx = +0.54 m/s
+  vy = -0.03 m/s
+  vz = -0.69 m/s
 Satellites: 6</description>
                 <TimeStamp id="93">
                     <when>2026-03-21T15:16:14.418Z</when>
@@ -512,13 +512,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="95">
-                <name>15:16:17 • 43.9 m/s</name>
+                <name>15:16:17 • 1.3 m/s</name>
                 <description>UTC: 2026-03-21T15:16:17.418Z
 Position: 32.168847°, 34.813310°, 55.2 m
-Speed: 43.89 m/s (158.0 km/h)
-  vx = -16.06 m/s
-  vy = -36.52 m/s
-  vz = -18.29 m/s
+Speed: 1.29 m/s (4.7 km/h)
+  vx = -0.77 m/s
+  vy = +1.03 m/s
+  vz = -0.12 m/s
 Satellites: 6</description>
                 <TimeStamp id="96">
                     <when>2026-03-21T15:16:17.418Z</when>
@@ -529,13 +529,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="98">
-                <name>15:16:20 • 15.2 m/s</name>
+                <name>15:16:20 • 0.7 m/s</name>
                 <description>UTC: 2026-03-21T15:16:20.418Z
 Position: 32.168713°, 34.813298°, 54.7 m
-Speed: 15.25 m/s (54.9 km/h)
-  vx = +10.64 m/s
-  vy = +8.83 m/s
-  vz = -6.42 m/s
+Speed: 0.70 m/s (2.5 km/h)
+  vx = +0.31 m/s
+  vy = -0.18 m/s
+  vz = +0.60 m/s
 Satellites: 6</description>
                 <TimeStamp id="99">
                     <when>2026-03-21T15:16:20.418Z</when>
@@ -546,13 +546,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="101">
-                <name>15:16:23 • 8.8 m/s</name>
+                <name>15:16:23 • 1.6 m/s</name>
                 <description>UTC: 2026-03-21T15:16:23.418Z
 Position: 32.168804°, 34.813264°, 61.1 m
-Speed: 8.77 m/s (31.6 km/h)
-  vx = -7.79 m/s
-  vy = +3.24 m/s
-  vz = +2.39 m/s
+Speed: 1.56 m/s (5.6 km/h)
+  vx = +1.12 m/s
+  vy = -1.04 m/s
+  vz = +0.34 m/s
 Satellites: 5</description>
                 <TimeStamp id="102">
                     <when>2026-03-21T15:16:23.418Z</when>
@@ -563,13 +563,13 @@ Satellites: 5</description>
                 </Point>
             </Placemark>
             <Placemark id="104">
-                <name>15:16:26 • 16.8 m/s</name>
+                <name>15:16:26 • 1.4 m/s</name>
                 <description>UTC: 2026-03-21T15:16:26.418Z
 Position: 32.168833°, 34.813252°, 38.0 m
-Speed: 16.78 m/s (60.4 km/h)
-  vx = -7.86 m/s
-  vy = -14.80 m/s
-  vz = +0.85 m/s
+Speed: 1.37 m/s (4.9 km/h)
+  vx = -0.54 m/s
+  vy = +1.13 m/s
+  vz = -0.57 m/s
 Satellites: 5</description>
                 <TimeStamp id="105">
                     <when>2026-03-21T15:16:26.418Z</when>
@@ -580,13 +580,13 @@ Satellites: 5</description>
                 </Point>
             </Placemark>
             <Placemark id="107">
-                <name>15:16:29 • 20.2 m/s</name>
+                <name>15:16:29 • 1.0 m/s</name>
                 <description>UTC: 2026-03-21T15:16:29.418Z
 Position: 32.168792°, 34.813258°, 30.4 m
-Speed: 20.18 m/s (72.7 km/h)
-  vx = -5.51 m/s
-  vy = -15.99 m/s
-  vz = -11.01 m/s
+Speed: 0.98 m/s (3.5 km/h)
+  vx = -0.61 m/s
+  vy = +0.49 m/s
+  vz = +0.58 m/s
 Satellites: 6</description>
                 <TimeStamp id="108">
                     <when>2026-03-21T15:16:29.418Z</when>
@@ -597,13 +597,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="110">
-                <name>15:16:32 • 9.1 m/s</name>
+                <name>15:16:32 • 3.7 m/s</name>
                 <description>UTC: 2026-03-21T15:16:32.418Z
 Position: 32.168918°, 34.813225°, 60.4 m
-Speed: 9.07 m/s (32.7 km/h)
-  vx = -1.48 m/s
-  vy = +0.41 m/s
-  vz = +8.94 m/s
+Speed: 3.72 m/s (13.4 km/h)
+  vx = -3.38 m/s
+  vy = -1.45 m/s
+  vz = -0.56 m/s
 Satellites: 6</description>
                 <TimeStamp id="111">
                     <when>2026-03-21T15:16:32.418Z</when>
@@ -614,13 +614,13 @@ Satellites: 6</description>
                 </Point>
             </Placemark>
             <Placemark id="113">
-                <name>15:16:33 • 11.9 m/s</name>
+                <name>15:16:33 • 0.7 m/s</name>
                 <description>UTC: 2026-03-21T15:16:33.418Z
 Position: 32.168829°, 34.813203°, 54.1 m
-Speed: 11.90 m/s (42.8 km/h)
-  vx = +1.13 m/s
-  vy = -1.75 m/s
-  vz = -11.71 m/s
+Speed: 0.68 m/s (2.5 km/h)
+  vx = -0.61 m/s
+  vy = -0.30 m/s
+  vz = +0.04 m/s
 Satellites: 6</description>
                 <TimeStamp id="114">
                     <when>2026-03-21T15:16:33.418Z</when>

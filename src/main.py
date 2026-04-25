@@ -20,8 +20,8 @@ For each epoch t:
        satellite always shows significant radial velocity from the ground;
        a near-zero Doppler is typically an artifact (multipath,
        cross-correlation).
-    c. Compute (A_i, B_i, C_i, dt_sat_i) via IS-GPS-200 Kepler equations
-       + Sagnac correction (see sat_position.py).
+    c. Compute (A_i, B_i, C_i, dt_sat_i, vel_sat_i) via IS-GPS-200 Kepler
+       equations + Sagnac correction (see sat_position.py).
     d. PASS 1 — solver.py without atmospheric correction → rough fix (~15 m).
        => Excel table iter 0 (RMS ≈ 255 km) → iter 1 (9.53 m) → iter 2 (~0).
     e. Klobuchar (ionosphere) + Saastamoinen (troposphere) atmospheric
@@ -35,8 +35,13 @@ For each epoch t:
        on the surface and one in space. Reject solutions outside
        [-500, +1500] m altitude.
 
-2. Receiver velocity estimated by finite differencing successive ECEF
-   positions: v = (pos_t − pos_{t-1}) / Δt.
+2. Receiver velocity from Doppler measurements (velocity.py):
+       ρ̇_i = −λ_L1 · D1C_i        (pseudorange rate from Doppler [m/s])
+       H · [vx, vy, vz, ḋ]ᵀ = b   (linear system, same structure as PDF Part 6)
+   This is a direct instantaneous measurement (~0.05 m/s accuracy) vs the
+   finite-difference method (v = Δpos/Δt, ~1 m/s accuracy). The Doppler
+   approach is independent of successive position fixes and works even when
+   the previous epoch was invalid.
 
 3. Export CSV + KML (Google Earth, with timestamps for chronological playback).
 ════════════════════════════════════════════════════════════════════
@@ -54,6 +59,7 @@ from parser import load_observations
 from nav_loader import load_nav_files
 from sat_position import compute_sat_state
 from solver import solve_position, C as C_LIGHT
+from velocity import solve_velocity
 from coordinates import ecef_to_lla, elev_azim_from_ecef
 from atmosphere import klobuchar_delay, saastamoinen_delay, get_klobuchar_params
 from export import write_csv, write_kml
@@ -310,8 +316,6 @@ def run_session(obs_path: Path, nav: object, out_prefix: str) -> None:
 
     records   = []
     last_fix  = None     # last valid fix, used for x_rx in sat-state refinement
-    last_pos  = None     # previous ECEF position for finite-difference velocity
-    last_t_s  = None     # previous GPS time in seconds
     n_ok      = 0
     n_skip    = 0
 
@@ -319,14 +323,18 @@ def run_session(obs_path: Path, nav: object, out_prefix: str) -> None:
         epoch_obs = obs.sel(time=t)
 
         # ── Collect satellite measurements ───────────────────────────────────
+        # pos_data : fed into solve_position  → (pos_sat, dt_sat, rho)
+        # vel_data : fed into solve_velocity  → (pos_sat, vel_sat, doppler_hz)
         pos_data: list[tuple[np.ndarray, float, float]] = []
+        vel_data: list[tuple[np.ndarray, np.ndarray, float]] = []
+
         for sv_val in epoch_obs.sv.values:
             sv = str(sv_val)
             if sv[0] != "G":
                 continue
 
-            rho = float(epoch_obs["C1C"].sel(sv=sv_val).values) if "C1C" in obs else np.nan
-            snr = float(epoch_obs["S1C"].sel(sv=sv_val).values) if "S1C" in obs else np.nan
+            rho     = float(epoch_obs["C1C"].sel(sv=sv_val).values) if "C1C" in obs else np.nan
+            snr     = float(epoch_obs["S1C"].sel(sv=sv_val).values) if "S1C" in obs else np.nan
             doppler = float(epoch_obs["D1C"].sel(sv=sv_val).values) if "D1C" in obs else np.nan
 
             if not np.isfinite(rho) or rho <= 0:
@@ -341,8 +349,12 @@ def run_session(obs_path: Path, nav: object, out_prefix: str) -> None:
             state = compute_sat_state(nav, sv, t, rho, x_rx)
             if state is None:
                 continue
-            pos_sat, dt_sat, _vel_sat = state
+            pos_sat, dt_sat, vel_sat = state
             pos_data.append((pos_sat, dt_sat, rho))
+
+            # Doppler entry: only when D1C is a valid finite measurement
+            if np.isfinite(doppler):
+                vel_data.append((pos_sat, vel_sat, doppler))
 
         if len(pos_data) < MIN_SAT:
             n_skip += 1
@@ -382,20 +394,17 @@ def run_session(obs_path: Path, nav: object, out_prefix: str) -> None:
 
         last_fix = pos.copy()
 
-        # ── Receiver velocity from ECEF finite differencing ──────────────────
-        # v ≈ (pos_t − pos_{t-1}) / Δt. Sufficient on a pedestrian trajectory
-        # (Doppler would give ~10× better, but the GPS-only revert put us
-        # back on this simple method). Δt ≈ 1 s between Android epochs.
-        t_s = _gps_seconds(t)
+        # ── Receiver velocity from Doppler measurements (velocity.py) ────────
+        # Build the linear system H·[vx,vy,vz,ḋ] = b where:
+        #   ρ̇_i = −λ_L1 · D1C_i   (pseudorange rate from Doppler)
+        #   ρ̇_i = ê_i·(v_sat_i − v_rx) + ḋ
+        # This is a direct, instantaneous measurement (~0.05 m/s accuracy)
+        # independent of successive position fixes.
         vx = vy = vz = 0.0
-        if last_pos is not None and last_t_s is not None:
-            dt = t_s - last_t_s
-            if dt > 0:
-                vx = (pos[0] - last_pos[0]) / dt
-                vy = (pos[1] - last_pos[1]) / dt
-                vz = (pos[2] - last_pos[2]) / dt
-        last_pos = pos[:3].copy()
-        last_t_s = t_s
+        vel_sol = solve_velocity(vel_data, pos) if len(vel_data) >= 4 else None
+        if vel_sol is not None:
+            vx, vy, vz = float(vel_sol[0]), float(vel_sol[1]), float(vel_sol[2])
+            # vel_sol[3] = receiver clock drift rate [m/s] — not exported but available
 
         speed = float(np.sqrt(vx * vx + vy * vy + vz * vz))
 
@@ -414,9 +423,10 @@ def run_session(obs_path: Path, nav: object, out_prefix: str) -> None:
         if (epoch_idx + 1) % 50 == 0 or epoch_idx == 0:
             n_dropped = len(pos_data) - n_used
             extra = f" (-{n_dropped} outliers)" if n_dropped else ""
+            vel_src = "D" if vel_sol is not None else "-"
             print(f"  [{epoch_idx+1:4d}/{n_epochs}]  "
                   f"lat={lat:.5f}°  lon={lon:.5f}°  alt={alt:.1f} m  "
-                  f"v={speed:.2f} m/s  n_sat={n_used}{extra}")
+                  f"v={speed:.2f} m/s [{vel_src}]  n_sat={n_used}{extra}")
 
     print(f"\nSolved epochs: {n_ok}/{n_epochs}  (skipped: {n_skip})")
 

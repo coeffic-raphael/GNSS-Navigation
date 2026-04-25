@@ -122,6 +122,7 @@ the median time delta between the two streams.
 │   ├── atmosphere.py         # Klobuchar ionosphere + Saastamoinen troposphere
 │   ├── coordinates.py        # WGS-84 ECEF ↔ geodetic conversions
 │   ├── solver.py             # Newton / Gauss-Newton GPS solver
+│   ├── velocity.py           # Doppler linear solver
 │   ├── export.py             # CSV and KML writers
 │   ├── validate.py           # optional comparison against NMEA GGA
 │   └── download_brdc.py      # one-time BRDC downloader
@@ -134,23 +135,28 @@ the median time delta between the two streams.
 For each 1 Hz epoch of the RINEX file: (a) read the C1C pseudoranges, S1C
 (SNR) and D1C (Doppler) for each visible GPS satellite; (b) reject
 measurements with SNR < 25 dB-Hz or |Doppler| < 200 Hz; (c) propagate each
-satellite's position from its broadcast ephemeris using the IS-GPS-200
-Kepler equations (with Sagnac and relativistic clock corrections);
+satellite's position and velocity from its broadcast ephemeris using the
+IS-GPS-200 Kepler equations (with Sagnac and relativistic clock corrections);
 (d) solve the four GPS equations *F_i = (x − A_i)² + (y − B_i)² + (z − C_i)²
 − (c·(t_i − d))² = 0* with multivariate Newton, starting from the PDF seed
 *(0, 0, 6 370 000 m, 0 s)* — the system is square for N = 4 and
 over-determined (Gauss-Newton normal equations) for N > 4; (e) apply
 Klobuchar + Saastamoinen corrections from the rough fix and re-solve
 (two-pass scheme); (f) drop outlier satellites whose post-fit residual
-exceeds 500 m and re-solve (up to 3 rejections); (g) snap solved epochs to
-the nearest slot on the 1 Hz grid defined by the first fix and fill missing
-seconds with NaN rows. Receiver velocity is estimated by finite differencing
-the ECEF positions of consecutive epochs.
+exceeds 500 m and re-solve (up to 3 rejections); (g) solve receiver velocity
+from the D1C Doppler measurements via the linear system
+*H · [vx, vy, vz, ḋ]ᵀ = b* where *ρ̇_i = −λ_L1 · D1C_i* is the pseudorange
+rate and *H_i = [−ê_x, −ê_y, −ê_z, 1]* is built from the line-of-sight unit
+vectors — this gives ~0.05 m/s accuracy vs ~1 m/s for finite differencing;
+(h) snap solved epochs to the nearest slot on the 1 Hz grid defined by the
+first fix and fill missing seconds with NaN rows.
 
 ## Credits
 
-- Solver faithful to *"Solving the GPS Equations"* — Harnam Arneja, Andrew
-  Bender, Sam Jugus, Tim Reid.
+- Position solver faithful to *"Solving the GPS Equations"* — Harnam Arneja,
+  Andrew Bender, Sam Jugus, Tim Reid.
+- Velocity solver: Doppler linear system — standard GNSS receiver technique
+  (direct, instantaneous, ~0.05 m/s accuracy vs ~1 m/s for finite differencing).
 - Orbit propagation and time-system conventions follow **IS-GPS-200**.
 - Ionospheric model: **Klobuchar** (IS-GPS-200 §20.3.3.5.2.5).
 - Tropospheric model: **Saastamoinen** (1972).
