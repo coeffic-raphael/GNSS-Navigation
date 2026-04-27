@@ -5,9 +5,10 @@ Given a RINEX 4 observation file, it computes a **strict 1 Hz** trajectory
 with 3D position, velocity and UTC time, and exports it as CSV and KML.
 
 The solver is a faithful implementation of the Newton/Gauss-Newton method
-described in *"Solving the GPS Equations"* (Arneja, Bender, Jugus, Reid),
-with the standard IS-GPS-200 extensions (Kepler orbit propagation, Sagnac
-correction, Klobuchar ionosphere, Saastamoinen troposphere).
+described in [*"Solving the GPS Equations"*](<Solving the GPS Equations.pdf>)
+(Arneja, Bender, Jugus, Reid), with the standard IS-GPS-200 extensions
+(Kepler orbit propagation, Sagnac correction, Klobuchar ionosphere,
+Saastamoinen troposphere).
 
 ## Requirements
 
@@ -151,10 +152,15 @@ vectors — this gives ~0.05 m/s accuracy vs ~1 m/s for finite differencing;
 (h) snap solved epochs to the nearest slot on the 1 Hz grid defined by the
 first fix and fill missing seconds with NaN rows.
 
+## References
+
+- [Assignment PDF](<Ex0_intro to Navigation.pdf>)
+- [Formula reference: *Solving the GPS Equations*](<Solving the GPS Equations.pdf>)
+
 ## Credits
 
-- Position solver faithful to *"Solving the GPS Equations"* — Harnam Arneja,
-  Andrew Bender, Sam Jugus, Tim Reid.
+- Position solver faithful to [*"Solving the GPS Equations"*](<Solving the GPS Equations.pdf>)
+  — Harnam Arneja, Andrew Bender, Sam Jugus, Tim Reid.
 - Velocity solver: Doppler linear system — standard GNSS receiver technique
   (direct, instantaneous, ~0.05 m/s accuracy vs ~1 m/s for finite differencing).
 - Orbit propagation and time-system conventions follow **IS-GPS-200**.
