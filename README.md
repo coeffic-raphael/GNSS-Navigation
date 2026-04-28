@@ -114,6 +114,7 @@ the median time delta between the two streams.
 ```
 .
 ├── README.md                 # this file
+├── PIPELINE.md               # step-by-step explanation of the GNSS pipeline
 ├── requirements.txt
 ├── src/
 │   ├── main.py               # pipeline entry point
@@ -154,6 +155,7 @@ first fix and fill missing seconds with NaN rows.
 
 ## References
 
+- [Pipeline explanation](PIPELINE.md)
 - [Assignment PDF](<Ex0_intro to Navigation.pdf>)
 - [Formula reference: *Solving the GPS Equations*](<Solving the GPS Equations.pdf>)
 
