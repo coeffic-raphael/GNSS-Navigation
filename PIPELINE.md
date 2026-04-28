@@ -735,13 +735,4 @@ speed
 number of satellites
 ```
 
-## 7. Short Presentation Version
 
-For each RINEX epoch, the code reads the raw GPS observables: `C1C`
-pseudorange, `D1C` Doppler and `S1C` signal strength. The BRDC navigation
-files provide the satellite ephemerides, which are used to compute satellite
-positions. Then the solver estimates the receiver ECEF position and clock bias
-using Newton / Gauss-Newton. After atmospheric corrections, the position is
-converted to latitude, longitude and altitude. Finally, Doppler measurements
-are used to estimate velocity, and the result is exported as a strict 1 Hz CSV
-and a KML trajectory.
