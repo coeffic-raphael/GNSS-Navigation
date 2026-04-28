@@ -64,7 +64,7 @@ def write_kml(records: list[dict], path: str | Path) -> None:
     # ── Spaced placemarks with UTC + speed visible on map ────────────────────
     # One placemark every STRIDE points. Label = "HH:MM:SS • v m/s" for quick
     # readability. TimeStamp enables chronological playback in Google Earth.
-    STRIDE = max(3, len(records) // 30)  # target ~30 placemarks, at least every 3 s
+    STRIDE = max(5, len(records) // 30)  # target ~30 placemarks, at least every 5 s
 
     folder = kml.newfolder(name=f"Points (1 every {STRIDE}s)")
     for i, r in enumerate(records):
