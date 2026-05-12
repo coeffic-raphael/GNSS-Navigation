@@ -1,4 +1,4 @@
-# GNSS Positioning Pipeline — Intro to Navigation (Ex0)
+# GNSS Positioning Pipeline — Intro to Navigation (Ex0) 
 
 Offline GPS positioning pipeline for Android RINEX 4 raw measurements.
 Given a RINEX 4 observation file, it computes a **strict 1 Hz** trajectory
