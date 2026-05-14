@@ -316,6 +316,7 @@ def run_session(obs_path: Path, nav: object, out_prefix: str) -> None:
 
     records   = []
     last_fix  = None     # last valid fix, used for x_rx in sat-state refinement
+    last_alt_m = None     # last exported altitude, used for simple smoothing
     n_ok      = 0
     n_skip    = 0
 
@@ -391,6 +392,10 @@ def run_session(obs_path: Path, nav: object, out_prefix: str) -> None:
         if not (ALT_MIN_M <= alt <= ALT_MAX_M):
             n_skip += 1
             continue
+
+        if last_alt_m is not None:
+            alt = 0.5 * alt + 0.5 * last_alt_m
+        last_alt_m = alt
 
         last_fix = pos.copy()
 

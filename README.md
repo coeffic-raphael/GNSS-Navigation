@@ -97,6 +97,15 @@ strict 1 Hz export even when Android epochs drift slightly in their
 sub-second offset, every output row is snapped to the 1-second grid defined
 by the first fix. The KML ignores rows with missing coordinates.
 
+Altitude is lightly smoothed before export:
+
+```text
+alt_m = 0.5 * current_altitude + 0.5 * previous_exported_altitude
+```
+
+The first valid altitude is kept unchanged. Latitude and longitude are not
+smoothed by this filter.
+
 ### 3. (Optional) Validate against the phone's NMEA solution
 
 ```bash
@@ -107,6 +116,19 @@ python src/validate.py \
 
 Prints horizontal / vertical / 3D error statistics (median, RMS, max) and
 the median time delta between the two streams.
+
+To compare the altitude smoothing itself against NMEA, run:
+
+```bash
+python src/compare_alt_smoothing.py \
+    --csv output/session_21_03_short.csv \
+    --nmea "data/gnss_log_2026_03_21_17_14_34 (1).nmea" \
+    --previous-weight 0.5 \
+    --input-is-smoothed
+```
+
+This reports horizontal, vertical and 3D errors for both variants:
+`without_smoothing` and `with_smoothing_prev_0.5`.
 
 
 ## Project layout
@@ -127,6 +149,7 @@ the median time delta between the two streams.
 │   ├── velocity.py           # Doppler linear solver
 │   ├── export.py             # CSV and KML writers
 │   ├── validate.py           # optional comparison against NMEA GGA
+│   ├── compare_alt_smoothing.py # compare exported altitude smoothing vs NMEA
 │   └── download_brdc.py      # one-time BRDC downloader
 ├── data/                     # RINEX observations + BRDC (committed, regenerable)
 └── output/                   # Generated CSV + KML (committed, regenerable)
@@ -151,7 +174,10 @@ from the D1C Doppler measurements via the linear system
 rate and *H_i = [−ê_x, −ê_y, −ê_z, 1]* is built from the line-of-sight unit
 vectors — this gives ~0.05 m/s accuracy vs ~1 m/s for finite differencing;
 (h) snap solved epochs to the nearest slot on the 1 Hz grid defined by the
-first fix and fill missing seconds with NaN rows.
+first fix and fill missing seconds with NaN rows. Before export, altitude is
+smoothed with a simple 0.5/0.5 one-pole filter using the previous exported
+altitude; latitude and longitude remain the direct geodetic conversion of the
+solved ECEF position.
 
 ## References
 
